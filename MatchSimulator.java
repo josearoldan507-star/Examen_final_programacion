@@ -20,19 +20,19 @@ public class MatchSimulator {
         System.out.println("║              SIMULACIÓN DE PARTIDA            ║");
         System.out.println("=================================================");
 
-        System.out.println(player1.getNick() + " VS " + player2.getNick());
+        System.out.println(player1.getNickname() + " VS " + player2.getNickname());
         System.out.println("-----------------------------");
 
         int result = random.nextInt(3);
 
         if (result == 0) {
             System.out.println("-----------------------------");
-            System.out.println("GANA: " + player1.getNick());
+            System.out.println("GANA: " + player1.getNickname());
             player1.setPuntos(player1.getPuntos() + 10);
 
         } else if (result == 1) {
             System.out.println("-----------------------------");
-            System.out.println("GANA: " + player2.getNick());
+            System.out.println("GANA: " + player2.getNickname());
             player2.setPuntos(player2.getPuntos() + 10);
             System.out.println("-----------------------------");
 
@@ -46,8 +46,8 @@ public class MatchSimulator {
 
         System.out.println("\nPUNTOS ACTUALIZADOS:");
         System.out.println("------------------------------");
-        System.out.println(player1.getNick() + ": " + player1.getPuntos());
-        System.out.println(player2.getNick() + ": " + player2.getPuntos());
+        System.out.println(player1.getNickname() + ": " + player1.getPuntos());
+        System.out.println(player2.getNickname() + ": " + player2.getPuntos());
         System.out.println("==============================");
     }
 }
