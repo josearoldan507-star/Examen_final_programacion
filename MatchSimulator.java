@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class MatchSimulator {
 
-    private Random random = new Random();
+    private final Random random = new Random();
 
     public void simularPartida(Player player1, Player player2) {
 
@@ -25,23 +25,25 @@ public class MatchSimulator {
 
         int result = random.nextInt(3);
 
-        if (result == 0) {
-            System.out.println("-----------------------------");
-            System.out.println("GANA: " + player1.getNickname());
-            player1.setPuntos(player1.getPuntos() + 10);
-
-        } else if (result == 1) {
-            System.out.println("-----------------------------");
-            System.out.println("GANA: " + player2.getNickname());
-            player2.setPuntos(player2.getPuntos() + 10);
-            System.out.println("-----------------------------");
-
-        } else {
-            System.out.println("-----------------------------");
-            System.out.println("QUEDARON EMPATES");
-            player1.setPuntos(player1.getPuntos() + 5);
-            player2.setPuntos(player2.getPuntos() + 5);
-            System.out.println("-----------------------------");
+        switch (result) {
+            case 0 -> {
+                System.out.println("-----------------------------");
+                System.out.println("GANA: " + player1.getNickname());
+                player1.setPuntos(player1.getPuntos() + 10);
+            }
+            case 1 -> {
+                System.out.println("-----------------------------");
+                System.out.println("GANA: " + player2.getNickname());
+                player2.setPuntos(player2.getPuntos() + 10);
+                System.out.println("-----------------------------");
+            }
+            default -> {
+                System.out.println("-----------------------------");
+                System.out.println("QUEDARON EMPATES");
+                player1.setPuntos(player1.getPuntos() + 5);
+                player2.setPuntos(player2.getPuntos() + 5);
+                System.out.println("-----------------------------");
+            }
         }
 
         System.out.println("\nPUNTOS ACTUALIZADOS:");
